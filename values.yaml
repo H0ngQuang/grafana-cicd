@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  repository: grafana/grafana
+  tag: "10.0.0"
+  pullPolicy: Always
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 200Mi
+  requests:
+    cpu: 100m
+    memory: 100Mi
+
+persistence:
+  enabled: true
+  size: 1Gi
+  accessModes:
+    - ReadWriteOnce
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30030
+
+adminUser: admin
+adminPassword: admin123
+
