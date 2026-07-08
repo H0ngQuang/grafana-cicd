@@ -90,7 +90,7 @@ pipeline{
                         -p ${HARBOR_PASS} \
                         --plain-http
                     
-                    helm upgrade --install grafana \
+                    helm upgrade --install grafana-cicd \
                         oci://${HARBOR_URL}/${HARBOR_PROJECT}/grafana \
                         --version 0.1.${BUILD_NUMBER} \
                         --namespace ${K8S_NAMESPACE} \
